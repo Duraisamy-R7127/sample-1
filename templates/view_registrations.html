@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">All Registrations</h2>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary">Back to Dashboard</a>
+</div>
+
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-header bg-white py-3">
+        <form method="GET" action="{{ url_for('view_registrations') }}" class="d-flex">
+            <input type="text" name="search" class="form-control me-2" placeholder="Search by name, ID, or event..."
+                value="{{ search_query }}">
+            <button type="submit" class="btn btn-primary">Search</button>
+            {% if search_query %}
+            <a href="{{ url_for('view_registrations') }}" class="btn btn-outline-secondary ms-2">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Registration ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reg in registrations %}
+                    <tr>
+                        <td class="font-monospace fw-bold text-primary">{{ reg.registration_id }}</td>
+                        <td>{{ reg.name }}</td>
+                        <td>{{ reg.email }}</td>
+                        <td>{{ reg.phone }}</td>
+                        <td><span class="badge bg-secondary">{{ reg.event_name }}</span></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center py-4 text-muted">
+                            {% if search_query %}
+                            No registrations found matching "{{ search_query }}".
+                            {% else %}
+                            No registrations found.
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

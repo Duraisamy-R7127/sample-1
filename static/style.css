@@ -1,0 +1,111 @@
+/* Custom Styles for Event Registration System */
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bg-primary {
+    background-color: #4F46E5 !important;
+}
+
+.text-primary {
+    color: #4F46E5 !important;
+}
+
+.btn-primary {
+    background-color: #4F46E5;
+    border-color: #4F46E5;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #4338CA;
+    border-color: #4338CA;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);
+    transform: translateY(-1px);
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.event-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.focus-ring:focus {
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 600;
+}
+
+/* Custom rounded corners for images */
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Table styling enhancements */
+.table > :not(caption) > * > * {
+    padding: 1rem 0.75rem;
+}
+
+/* Flash alerts styling */
+.alert {
+    border-radius: 0.5rem;
+    border: none;
+    border-left: 5px solid transparent;
+}
+
+.alert-success {
+    background-color: #ECFDF5;
+    color: #065F46;
+    border-left-color: #10B981;
+}
+
+.alert-danger {
+    background-color: #FEF2F2;
+    color: #991B1B;
+    border-left-color: #EF4444;
+}
+
+.alert-info {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-left-color: #3B82F6;
+}
+
+.alert-warning {
+    background-color: #FFFBEB;
+    color: #92400E;
+    border-left-color: #F59E0B;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em;
+}
+
+/* Small specific overrides */
+.btn-dark {
+    background-color: #111827;
+}
+
+.btn-dark:hover {
+    background-color: #1F2937;
+}

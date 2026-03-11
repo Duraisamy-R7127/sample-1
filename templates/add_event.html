@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0 mt-4">
+            <div class="card-header bg-primary text-white py-3">
+                <h4 class="mb-0">Add New Event</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-bold">Event Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required
+                            placeholder="e.g. Annual Tech Conference">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="date" class="form-label fw-bold">Date</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="time" class="form-label fw-bold">Time</label>
+                            <input type="time" class="form-control" id="time" name="time" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="location" class="form-label fw-bold">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" required
+                            placeholder="e.g. Main Hall, Convention Center">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary fw-bold">Create Event</button>
+                        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
